@@ -28,15 +28,13 @@ public class Main {
     public static void task2() {
         int[] arr = generateRandomArray();
         System.out.println("Задача 2");
-        int maxArr = -1;
+        int maxArr;
+        maxArr = arr[0];
         int minArr = 200000;
         for (final int current : arr) {
             if (current > maxArr) {
                 maxArr = current;
-            } else if
-            (current < minArr) {
-                minArr = current;
-            }
+            } else if (current < minArr) minArr = current;
         }
         System.out.println("Минимальная сумма трат за день составила " + minArr +
                 " рублей. Максимальная сумма трат за день составила " + maxArr + " рублей.");
@@ -49,7 +47,8 @@ public class Main {
         for (int j : arr) {
             sum = sum + j;
         }
-        double middleSum = sum / 30;
+        double sumD = sum;
+        double middleSum = sumD / arr.length;
         System.out.println("Средняя сумма трат за месяц составила " + middleSum + " рублей");
     }
 
